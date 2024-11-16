@@ -12,8 +12,23 @@ window.onmousemove = (e) => {
         .to('.navbar', { opacity: distFromCenter }, 0);  
 };
 
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
+
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const closeMenu = document.querySelector(".close-menu");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
 });
 
 
@@ -124,3 +139,29 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(bar);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const icon = document.querySelector('.fas.fa-play');
+    if (icon) {
+        console.log('Icon is available');
+    } else {
+        console.log('Icon is not found');
+    }
+});
+
+function playSound() {
+    const nameInArabic = "يارا تركي الحربي"; // Replace with your full name in Arabic
+    
+    // Check if the browser supports speech synthesis
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(nameInArabic);
+        utterance.lang = 'ar-SA'; // Arabic language and Saudi accent
+        utterance.rate = 1; // Adjust the rate of speech (1 is normal)
+        utterance.pitch = 1; // Adjust the pitch (1 is normal)
+        
+        // Speak the name
+        window.speechSynthesis.speak(utterance);
+    } else {
+        console.error('Speech synthesis is not supported in this browser.');
+    }
+}

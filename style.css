@@ -39,6 +39,8 @@ html, body {
 
 img {
     user-select: none;
+    max-width: 100% ;/* Ensure images fit within their containers */
+    height: auto;
 }
 
 /* .highlight {
@@ -134,6 +136,7 @@ img {
     color: #F582A7; 
 }
 
+
 .highlight {
     background: linear-gradient(to right, #FF77B7, #8eadec);
     -webkit-background-clip: text;
@@ -165,6 +168,12 @@ img {
 
 .left h1, .left p {
     margin: 0 0 10px;
+}
+
+.left h1 {
+    display: flex;
+    align-items: center; 
+    white-space: nowrap;
 }
 
 .left p {
@@ -226,6 +235,7 @@ img {
         max-width: 100%;
     }
 }
+
 
 button {
     display: block;  
@@ -378,6 +388,12 @@ li {
     text-align: center;
 }
 
+#skills h2 {
+    font-size: 40px;
+    font-weight: 400;
+    padding-top: 30px;
+}
+
 
 #skills ul {
     list-style: none;
@@ -412,6 +428,11 @@ li {
 
 .programming-languages ul li, .tech-skills ul li {
     padding-top: 30px;
+    text-align: left;
+}
+
+.programming-languages p, .tech-skills p{
+    text-align: left;
 }
 
 .level {
@@ -496,4 +517,58 @@ hr:before {
     /* max-width: 75ch; */
     /* justify-content: center; */
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    /* Adjust navbar for mobile */
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px; /* Reduce padding */
+    }
+
+    /* Adjust home section */
+    #home {
+        flex-direction: column; /* Stack left and right sections */
+        align-items: center; /* Center items */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .left, .right {
+        max-width: 100%; /* Full width on mobile */
+        padding: 0; /* Remove padding */
+    }
+
+    /* Adjust font sizes for better readability */
+    .navbar a {
+        font-size: 16px; /* Increase font size for touch targets */
+    }
+
+    p, li {
+        font-size: 18px; /* Increase font size for readability */
+    }
+
+    .button {
+        font-size: 16px; /* Adjust button font size */
+        padding: 12px; /* Increase padding for touch targets */
+    }
+
+    /* Adjust skills section */
+    .skills-container {
+        flex-direction: column; /* Stack skills vertically */
+        align-items: center; /* Center items */
+    }
+
+    /* Adjust social media icons */
+    .social-media ul {
+        flex-direction: column; /* Stack icons vertically */
+    }
+
+    .social-media li {
+        margin: 10px 0; /* Add margin for spacing */
+    }
+}
+
+.fas {
+    margin-left: 10px; /* Space between text and icon */
+    cursor: pointer; /* Changes cursor to pointer on hover */
 }
