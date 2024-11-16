@@ -12,9 +12,9 @@ window.onmousemove = (e) => {
         .to('.navbar', { opacity: distFromCenter }, 0);  
 };
 
-// document.addEventListener('contextmenu', (e) => {
-//     e.preventDefault();
-// });
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
@@ -77,15 +77,27 @@ typeEffect();
 
 const cursorGif = document.getElementById('cursor-gif');
 
+// Display the active cursor image initially
+cursorGif.src = './assets/img/cursor-active.gif'; // The active cursor image
 cursorGif.style.display = 'block';
 
+let inactivityTimer; // Timer for inactivity
 
 window.addEventListener('mousemove', (e) => {
-    
+    // Reset the inactivity timer on mouse movement
+    clearTimeout(inactivityTimer);
+
     cursorGif.style.left = e.pageX + 'px';
     cursorGif.style.top = e.pageY + 'px';
-});
 
+    cursorGif.src = './assests/img/duck-ducky.gif'; // Active cursor image
+    cursorGif.style.display = 'block';
+
+    // Start the inactivity timer
+    inactivityTimer = setTimeout(() => {
+        cursorGif.src = './assests/img/rubber-duck.gif'; // Inactive cursor image
+    }, 3000); // 3000 milliseconds = 3 seconds
+});
 
 window.addEventListener('mouseenter', () => {
     cursorGif.style.display = 'block';
@@ -95,10 +107,10 @@ window.addEventListener('mouseleave', () => {
     cursorGif.style.display = 'none';
 });
 
-window.addEventListener("scroll", () => {
-    console.log(cursorGif.style.display); // Check if the display property changes unexpectedly
-}, false);
 
+window.addEventListener("scroll", () => {
+    console.log(cursorGif.style.display); 
+}, false);
 
 window.addEventListener("scroll", () => {
     const scrollPercentage = window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
@@ -140,28 +152,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const icon = document.querySelector('.fas.fa-play');
-    if (icon) {
-        console.log('Icon is available');
-    } else {
-        console.log('Icon is not found');
-    }
-});
-
 function playSound() {
-    const nameInArabic = "يارا تركي الحربي"; // Replace with your full name in Arabic
+    const nameInArabic = "يارا تركي الحربي"; 
     
     // Check if the browser supports speech synthesis
     if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(nameInArabic);
-        utterance.lang = 'ar-SA'; // Arabic language and Saudi accent
-        utterance.rate = 1; // Adjust the rate of speech (1 is normal)
-        utterance.pitch = 1; // Adjust the pitch (1 is normal)
-        
+        utterance.lang = 'ar-SA'; 
+        utterance.rate = 1; 
+        utterance.pitch = 1; 
+
         // Speak the name
         window.speechSynthesis.speak(utterance);
     } else {
         console.error('Speech synthesis is not supported in this browser.');
     }
+}
+
+const fakeAd = document.getElementById("fakeAd");
+
+if (!fakeAd || fakeAd.offsetHeight === 0) {
+    // Redirect to a custom 404 page
+    window.location.href = "https://github.com/ytrbi"; // Replace with your 404 page URL
 }

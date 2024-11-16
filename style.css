@@ -43,6 +43,10 @@ img {
     height: auto;
 }
 
+.ad-detection {
+    display: none; 
+}
+
 /* .highlight {
     background-clip: text; /* Standard property */
     /* -webkit-background-clip: text; /* For WebKit browsers (Safari, Chrome) */
