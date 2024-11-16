@@ -169,9 +169,8 @@ function playSound() {
     }
 }
 
-const fakeAd = document.getElementById("fakeAd");
 
-if (!fakeAd || fakeAd.offsetHeight === 0) {
-    // Redirect to a custom 404 page
-    window.location.href = "https://github.com/ytrbi"; // Replace with your 404 page URL
-}
+    if (window.canRunAds && window.isAdBlockActive) {
+        console.log("Ad is hidden or blocked. Redirecting...");
+        window.location.href = "https://github.com/ytrbi"; // Replace with your 404 page URL
+    }
