@@ -16,7 +16,6 @@ document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
 });
 
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -169,8 +168,7 @@ function playSound() {
     }
 }
 
-
-    if (window.canRunAds && window.isAdBlockActive) {
-        console.log("Ad is hidden or blocked. Redirecting...");
-        window.location.href = "https://github.com/ytrbi"; // Replace with your 404 page URL
-    }
+if (window.canRunAds && window.isAdBlockActive) {
+    console.log("Ad is hidden or blocked. Redirecting...");
+    window.location.href = "https://github.com/ytrbi"; // Replace with your 404 page URL
+}

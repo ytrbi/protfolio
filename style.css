@@ -524,55 +524,162 @@ hr:before {
 }
 
 @media (max-width: 768px) {
-    /* Adjust navbar for mobile */
     .navbar {
-        flex-direction: column; /* Stack items vertically */
-        padding: 10px; /* Reduce padding */
+        flex-direction: column; 
+        padding: 10px; 
     }
 
-    /* Adjust home section */
     #home {
-        flex-direction: column; /* Stack left and right sections */
-        align-items: center; /* Center items */
-        padding: 20px; /* Reduce padding */
+        flex-direction: column;
+        align-items: center; 
+        padding: 20px;
     }
 
     .left, .right {
-        max-width: 100%; /* Full width on mobile */
-        padding: 0; /* Remove padding */
+        max-width: 100%;
+        padding: 0; 
     }
 
-    /* Adjust font sizes for better readability */
     .navbar a {
-        font-size: 16px; /* Increase font size for touch targets */
+        font-size: 16px; 
     }
 
     p, li {
-        font-size: 18px; /* Increase font size for readability */
+        font-size: 18px; 
     }
 
     .button {
-        font-size: 16px; /* Adjust button font size */
-        padding: 12px; /* Increase padding for touch targets */
+        font-size: 16px; 
+        padding: 12px; 
     }
 
     /* Adjust skills section */
     .skills-container {
-        flex-direction: column; /* Stack skills vertically */
-        align-items: center; /* Center items */
+        flex-direction: column; 
+        align-items: center; 
     }
 
-    /* Adjust social media icons */
+    
     .social-media ul {
-        flex-direction: column; /* Stack icons vertically */
+        flex-direction: column;
     }
 
     .social-media li {
-        margin: 10px 0; /* Add margin for spacing */
+        margin: 10px 0;
     }
 }
 
 .fas {
-    margin-left: 10px; /* Space between text and icon */
-    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-left: 10px; 
+    cursor: pointer; 
+}
+
+.footer-container {
+    background-color: #1c1c2b; /* Dark background for a modern look */
+    padding: 40px 20px; /* Increased padding for better spacing */
+    text-align: center; /* Center align text */
+    color: #f0f8ff; /* Light text color for contrast */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Space out sections */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the footer */
+}
+
+.footer-section {
+    flex: 1; /* Allow sections to grow */
+    min-width: 200px; /* Minimum width for responsiveness */
+    margin: 20px; /* Spacing between sections */
+}
+
+.footer-logo {
+    width: 60px; /* Adjust logo size */
+    margin-bottom: 10px; /* Space below logo */
+}
+
+.footer-name {
+    font-size: 24px; /* Increase font size for name */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.footer-description {
+    font-size: 14px; /* Smaller font for description */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.footer-title {
+    font-size: 18px; /* Font size for section titles */
+    margin-bottom: 10px; /* Space below titles */
+    font-weight: bold; /* Bold titles */
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.footer-links a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Link color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.footer-social-icons {
+    display: flex; /* Use flexbox for icons */
+    justify-content: center; /* Center the icons */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.footer-social-icons a {
+    margin: 0 10px; /* Space between icons */
+}
+
+.footer-social-icons svg {
+    width: 30px; /* Set icon size */
+    height: 30px; /* Set icon size */
+    fill: #FFFFFF; /* Icon color */
+    transition: transform 0.3s; /* Smooth scale effect */
+}
+
+.footer-social-icons svg:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.footer-email {
+    font-size: 14px; /* Font size for email */
+    margin-top: 10px; /* Space above email */
+}
+
+.footer-email a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Link color */
+}
+
+.footer-email a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .footer-section {
+        margin: 10px 0; /* Adjust margin for vertical layout */
+    }
 }
